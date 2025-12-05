@@ -1,0 +1,30 @@
+# Core LLM
+transformers>=4.36.0
+huggingface_hub>=0.20.0
+torch>=2.0.0
+accelerate>=0.25.0
+
+# Vector Database
+pymilvus>=2.4.0
+
+# Embeddings
+sentence-transformers>=2.2.0
+
+# Grammar-constrained generation (optional)
+# outlines>=0.0.34
+
+# Docker SDK (for Docker sandbox)
+docker>=7.0.0
+
+# vLLM client (for local GPU inference)
+openai>=1.0.0
+
+# Utilities
+numpy>=1.24.0
+pyyaml>=6.0.0
+
+# Testing
+pytest>=7.4.0
+
+# Optional: For enhanced local execution
+# bitsandbytes>=0.41.0  # 4-bit quantization
