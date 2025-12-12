@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1800" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="pillar1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pillar2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pillar3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pillar4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="core" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="llm" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="1800" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-size="36" font-weight="bold" fill="#1e293b">
+    Sadhaka (साधक) Architecture v0.2.0
+  </text>
+  <text x="700" y="80" text-anchor="middle" font-size="16" fill="#64748b">
+    "The one who accomplishes" — Production-grade AI Agent Framework
+  </text>
+  
+  <!-- ==================== MAIN AGENT BOX ==================== -->
+  <rect x="400" y="110" width="600" height="120" rx="12" fill="url(#core)" filter="url(#shadow)"/>
+  <text x="700" y="150" text-anchor="middle" font-size="24" font-weight="bold" fill="white">SadhakaAgent</text>
+  <text x="700" y="175" text-anchor="middle" font-size="14" fill="rgba(255,255,255,0.9)">core/agent.py — ReAct Loop + All Integrations</text>
+  <text x="700" y="200" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.7)">max_iterations=10 │ run() → _react_loop() → _execute_action()</text>
+  
+  <!-- ==================== 4 PILLARS SECTION ==================== -->
+  <text x="700" y="270" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e293b">The 4 Pillars</text>
+  
+  <!-- Pillar 1: Durable Memory -->
+  <g transform="translate(50, 300)">
+    <rect width="310" height="280" rx="10" fill="url(#pillar1)" filter="url(#shadow)"/>
+    <text x="155" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="white">PILLAR 1: Durable Memory</text>
+    <text x="155" y="50" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.8)">"Structured, queryable memory separates agents that learn"</text>
+    
+    <!-- MilvusClient -->
+    <rect x="15" y="70" width="130" height="80" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="80" y="95" text-anchor="middle" font-size="12" font-weight="600" fill="#1d4ed8">MilvusClient</text>
+    <text x="80" y="112" text-anchor="middle" font-size="10" fill="#64748b">memory/milvus_client.py</text>
+    <text x="80" y="128" text-anchor="middle" font-size="9" fill="#94a3b8">• Vector search</text>
+    <text x="80" y="140" text-anchor="middle" font-size="9" fill="#94a3b8">• In-memory fallback</text>
+    
+    <!-- HealthManager -->
+    <rect x="165" y="70" width="130" height="80" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="230" y="95" text-anchor="middle" font-size="12" font-weight="600" fill="#1d4ed8">HealthManager</text>
+    <text x="230" y="112" text-anchor="middle" font-size="10" fill="#64748b">memory/health_manager.py</text>
+    <text x="230" y="128" text-anchor="middle" font-size="9" fill="#94a3b8">• Health scores 0-1</text>
+    <text x="230" y="140" text-anchor="middle" font-size="9" fill="#94a3b8">• Auto-deprecation</text>
+    
+    <!-- Blackboard -->
+    <rect x="15" y="165" width="280" height="100" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="155" y="190" text-anchor="middle" font-size="12" font-weight="600" fill="#1d4ed8">Blackboard Pattern</text>
+    <text x="155" y="207" text-anchor="middle" font-size="10" fill="#64748b">orchestration/blackboard.py</text>
+    <text x="155" y="227" text-anchor="middle" font-size="9" fill="#94a3b8">Agents don't talk directly → Read/Write shared state</text>
+    <text x="155" y="242" text-anchor="middle" font-size="9" fill="#94a3b8">write_sync(key, value, agent_id) │ watch(key, callback)</text>
+    <text x="155" y="257" text-anchor="middle" font-size="9" fill="#94a3b8">Persisted to Milvus task_state collection</text>
+  </g>
+  
+  <!-- Pillar 2: Explicit Tools -->
+  <g transform="translate(380, 300)">
+    <rect width="310" height="280" rx="10" fill="url(#pillar2)" filter="url(#shadow)"/>
+    <text x="155" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="white">PILLAR 2: Explicit Tools</text>
+    <text x="155" y="50" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.8)">"Clear signatures eliminate guesswork"</text>
+    
+    <!-- ToolRegistry -->
+    <rect x="15" y="70" width="280" height="90" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="155" y="95" text-anchor="middle" font-size="12" font-weight="600" fill="#059669">ToolRegistry</text>
+    <text x="155" y="112" text-anchor="middle" font-size="10" fill="#64748b">core/tools.py</text>
+    <text x="155" y="130" text-anchor="middle" font-size="9" fill="#94a3b8">Built-in: calculator │ json_parser │ string_ops</text>
+    <text x="155" y="145" text-anchor="middle" font-size="9" fill="#94a3b8">create_tool() → AST validation → Safe execution</text>
+    
+    <!-- Schema Box -->
+    <rect x="15" y="175" width="130" height="90" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="80" y="198" text-anchor="middle" font-size="11" font-weight="600" fill="#059669">Pydantic Schemas</text>
+    <text x="80" y="218" text-anchor="middle" font-size="9" fill="#94a3b8">input_schema: Dict</text>
+    <text x="80" y="232" text-anchor="middle" font-size="9" fill="#94a3b8">output_schema: Dict</text>
+    <text x="80" y="246" text-anchor="middle" font-size="9" fill="#94a3b8">JSON Schema format</text>
+    
+    <!-- Safety Box -->
+    <rect x="165" y="175" width="130" height="90" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="230" y="198" text-anchor="middle" font-size="11" font-weight="600" fill="#059669">SafetyGuard</text>
+    <text x="230" y="215" text-anchor="middle" font-size="10" fill="#64748b">core/safety.py</text>
+    <text x="230" y="232" text-anchor="middle" font-size="9" fill="#94a3b8">• Loop detection</text>
+    <text x="230" y="246" text-anchor="middle" font-size="9" fill="#94a3b8">• Dangerous patterns</text>
+  </g>
+  
+  <!-- Pillar 3: Specific Goals -->
+  <g transform="translate(710, 300)">
+    <rect width="310" height="280" rx="10" fill="url(#pillar3)" filter="url(#shadow)"/>
+    <text x="155" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="white">PILLAR 3: Specific Goals</text>
+    <text x="155" y="50" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.8)">"Precise goals anchor reasoning"</text>
+    
+    <!-- GoalTree -->
+    <rect x="15" y="70" width="280" height="195" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="155" y="95" text-anchor="middle" font-size="12" font-weight="600" fill="#d97706">GoalTree</text>
+    <text x="155" y="112" text-anchor="middle" font-size="10" fill="#64748b">goals/goal_tree.py</text>
+    
+    <!-- Goal Tree Visualization -->
+    <rect x="120" y="125" width="70" height="25" rx="4" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="155" y="142" text-anchor="middle" font-size="9" fill="#92400e">Root Goal</text>
+    
+    <line x1="130" y1="150" x2="70" y2="170" stroke="#f59e0b" stroke-width="1.5"/>
+    <line x1="155" y1="150" x2="155" y2="170" stroke="#f59e0b" stroke-width="1.5"/>
+    <line x1="180" y1="150" x2="240" y2="170" stroke="#f59e0b" stroke-width="1.5"/>
+    
+    <rect x="35" y="170" width="60" height="20" rx="3" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="65" y="184" text-anchor="middle" font-size="8" fill="#92400e">Sub 1</text>
+    
+    <rect x="125" y="170" width="60" height="20" rx="3" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="155" y="184" text-anchor="middle" font-size="8" fill="#92400e">Sub 2</text>
+    
+    <rect x="210" y="170" width="60" height="20" rx="3" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="240" y="184" text-anchor="middle" font-size="8" fill="#92400e">Sub 3</text>
+    
+    <text x="155" y="215" text-anchor="middle" font-size="9" fill="#94a3b8">success_criteria: List[str]</text>
+    <text x="155" y="230" text-anchor="middle" font-size="9" fill="#94a3b8">progress: 0.0 → 1.0 (bubbles up)</text>
+    <text x="155" y="245" text-anchor="middle" font-size="9" fill="#94a3b8">check_alignment(goal_id, action)</text>
+  </g>
+  
+  <!-- Pillar 4: Recovery Logic -->
+  <g transform="translate(1040, 300)">
+    <rect width="310" height="280" rx="10" fill="url(#pillar4)" filter="url(#shadow)"/>
+    <text x="155" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="white">PILLAR 4: Recovery Logic</text>
+    <text x="155" y="50" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.8)">"Resilience prevents collapse"</text>
+    
+    <!-- RecoveryEngine -->
+    <rect x="15" y="70" width="280" height="80" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="155" y="95" text-anchor="middle" font-size="12" font-weight="600" fill="#dc2626">RecoveryEngine</text>
+    <text x="155" y="112" text-anchor="middle" font-size="10" fill="#64748b">recovery/recovery_engine.py</text>
+    <text x="155" y="130" text-anchor="middle" font-size="9" fill="#94a3b8">execute_with_recovery(func, retries, backoff)</text>
+    <text x="155" y="145" text-anchor="middle" font-size="9" fill="#94a3b8">Checkpoints │ Diagnostics │ Fallbacks</text>
+    
+    <!-- Circuit Breaker -->
+    <rect x="15" y="165" width="130" height="100" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="80" y="188" text-anchor="middle" font-size="11" font-weight="600" fill="#dc2626">CircuitBreaker</text>
+    <text x="80" y="208" text-anchor="middle" font-size="9" fill="#22c55e">● CLOSED</text>
+    <text x="80" y="223" text-anchor="middle" font-size="9" fill="#eab308">● HALF_OPEN</text>
+    <text x="80" y="238" text-anchor="middle" font-size="9" fill="#ef4444">● OPEN</text>
+    <text x="80" y="255" text-anchor="middle" font-size="8" fill="#94a3b8">5 failures → open</text>
+    
+    <!-- Failure Types -->
+    <rect x="165" y="165" width="130" height="100" rx="6" fill="white" fill-opacity="0.95"/>
+    <text x="230" y="185" text-anchor="middle" font-size="11" font-weight="600" fill="#dc2626">FailureTypes</text>
+    <text x="230" y="203" text-anchor="middle" font-size="8" fill="#94a3b8">TIMEOUT</text>
+    <text x="230" y="216" text-anchor="middle" font-size="8" fill="#94a3b8">TOOL_ERROR</text>
+    <text x="230" y="229" text-anchor="middle" font-size="8" fill="#94a3b8">LLM_ERROR</text>
+    <text x="230" y="242" text-anchor="middle" font-size="8" fill="#94a3b8">DOCKER_ERROR</text>
+    <text x="230" y="255" text-anchor="middle" font-size="8" fill="#94a3b8">MCP_ERROR</text>
+  </g>
+  
+  <!-- ==================== LLM SECTION ==================== -->
+  <text x="700" y="620" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e293b">LLM Backend: vLLM with KV-Cache Sharing</text>
+  
+  <g transform="translate(150, 640)">
+    <rect width="1100" height="220" rx="12" fill="url(#llm)" filter="url(#shadow)"/>
+    <text x="550" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="white">VLLMLatentProvider</text>
+    <text x="550" y="55" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.8)">llm/vllm_provider.py — Prefix Caching for Latent Collaboration</text>
+    
+    <!-- Shared Context Box -->
+    <rect x="20" y="75" width="350" height="130" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="195" y="100" text-anchor="middle" font-size="13" font-weight="600" fill="#db2777">SharedContext</text>
+    <text x="195" y="120" text-anchor="middle" font-size="10" fill="#64748b">System Prompt + Task + Blackboard + Tools</text>
+    
+    <rect x="40" y="135" width="310" height="55" rx="4" fill="#fdf2f8" stroke="#f9a8d4"/>
+    <text x="195" y="155" text-anchor="middle" font-size="10" font-weight="500" fill="#9d174d">KV-Cache (computed ONCE)</text>
+    <text x="195" y="172" text-anchor="middle" font-size="9" fill="#be185d">token_ids │ token_count │ access_count</text>
+    
+    <!-- Multi-Agent Flow -->
+    <rect x="400" y="75" width="680" height="130" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="740" y="100" text-anchor="middle" font-size="13" font-weight="600" fill="#db2777">Multi-Agent Parallel Generation</text>
+    
+    <!-- Agent boxes -->
+    <rect x="420" y="115" width="80" height="35" rx="4" fill="#fce7f3"/>
+    <text x="460" y="137" text-anchor="middle" font-size="10" fill="#9d174d">Agent 1</text>
+    
+    <rect x="520" y="115" width="80" height="35" rx="4" fill="#fce7f3"/>
+    <text x="560" y="137" text-anchor="middle" font-size="10" fill="#9d174d">Agent 2</text>
+    
+    <rect x="620" y="115" width="80" height="35" rx="4" fill="#fce7f3"/>
+    <text x="660" y="137" text-anchor="middle" font-size="10" fill="#9d174d">Agent 3</text>
+    
+    <!-- Shared arrow -->
+    <path d="M 350 160 L 420 135" stroke="#db2777" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <path d="M 350 160 L 520 135" stroke="#db2777" stroke-width="2" fill="none"/>
+    <path d="M 350 160 L 620 135" stroke="#db2777" stroke-width="2" fill="none"/>
+    
+    <!-- Token savings -->
+    <rect x="740" y="110" width="320" height="80" rx="6" fill="#ecfdf5" stroke="#10b981"/>
+    <text x="900" y="135" text-anchor="middle" font-size="12" font-weight="600" fill="#059669">Token Savings: 60-80%</text>
+    <text x="900" y="155" text-anchor="middle" font-size="10" fill="#047857">Without: 3 × (2000 + 100) = 6300 tokens</text>
+    <text x="900" y="172" text-anchor="middle" font-size="10" fill="#047857">With: 2000 + (3 × 100) = 2300 tokens</text>
+  </g>
+  
+  <!-- ==================== RUNTIME SECTION ==================== -->
+  <text x="700" y="900" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e293b">Runtime: Docker Manager</text>
+  
+  <g transform="translate(150, 920)">
+    <rect width="1100" height="180" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+    <text x="550" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="white">DockerManager</text>
+    <text x="550" y="55" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.7)">runtime/docker_manager.py — Ephemeral + Persistent Lifecycles</text>
+    
+    <!-- Ephemeral -->
+    <rect x="30" y="75" width="500" height="90" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="280" y="100" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">EPHEMERAL</text>
+    <text x="280" y="118" text-anchor="middle" font-size="10" fill="#64748b">Think → Test → Validate → Destroy</text>
+    
+    <rect x="50" y="130" width="90" height="25" rx="4" fill="#dbeafe"/>
+    <text x="95" y="147" text-anchor="middle" font-size="9" fill="#1e40af">Create</text>
+    <text x="155" y="147" font-size="14" fill="#64748b">→</text>
+    <rect x="170" y="130" width="90" height="25" rx="4" fill="#dbeafe"/>
+    <text x="215" y="147" text-anchor="middle" font-size="9" fill="#1e40af">Run Code</text>
+    <text x="275" y="147" font-size="14" fill="#64748b">→</text>
+    <rect x="290" y="130" width="90" height="25" rx="4" fill="#dbeafe"/>
+    <text x="335" y="147" text-anchor="middle" font-size="9" fill="#1e40af">Capture</text>
+    <text x="395" y="147" font-size="14" fill="#64748b">→</text>
+    <rect x="410" y="130" width="90" height="25" rx="4" fill="#fee2e2"/>
+    <text x="455" y="147" text-anchor="middle" font-size="9" fill="#991b1b">Destroy</text>
+    
+    <!-- Persistent -->
+    <rect x="570" y="75" width="500" height="90" rx="8" fill="white" fill-opacity="0.95"/>
+    <text x="820" y="100" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">PERSISTENT</text>
+    <text x="820" y="118" text-anchor="middle" font-size="10" fill="#64748b">MCP Servers → Health Monitor → Auto-restart</text>
+    
+    <rect x="590" y="130" width="90" height="25" rx="4" fill="#dcfce7"/>
+    <text x="635" y="147" text-anchor="middle" font-size="9" fill="#166534">Start</text>
+    <text x="695" y="147" font-size="14" fill="#64748b">→</text>
+    <rect x="710" y="130" width="90" height="25" rx="4" fill="#dcfce7"/>
+    <text x="755" y="147" text-anchor="middle" font-size="9" fill="#166534">Monitor</text>
+    <text x="815" y="147" font-size="14" fill="#64748b">→</text>
+    <rect x="830" y="130" width="90" height="25" rx="4" fill="#fef9c3"/>
+    <text x="875" y="147" text-anchor="middle" font-size="9" fill="#854d0e">Health ✓</text>
+    <text x="935" y="147" font-size="14" fill="#64748b">→</text>
+    <rect x="950" y="130" width="90" height="25" rx="4" fill="#dcfce7"/>
+    <text x="995" y="147" text-anchor="middle" font-size="9" fill="#166534">Restart?</text>
+  </g>
+  
+  <!-- ==================== DATA FLOW SECTION ==================== -->
+  <text x="700" y="1140" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e293b">ReAct Loop Data Flow</text>
+  
+  <g transform="translate(100, 1160)">
+    <rect width="1200" height="280" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+    
+    <!-- Step 1 -->
+    <rect x="30" y="30" width="160" height="70" rx="8" fill="#8b5cf6" filter="url(#shadow)"/>
+    <text x="110" y="55" text-anchor="middle" font-size="11" font-weight="600" fill="white">1. Task Received</text>
+    <text x="110" y="75" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">Create root goal</text>
+    <text x="110" y="90" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">Init blackboard</text>
+    
+    <path d="M 190 65 L 230 65" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 2 -->
+    <rect x="240" y="30" width="160" height="70" rx="8" fill="#ec4899" filter="url(#shadow)"/>
+    <text x="320" y="55" text-anchor="middle" font-size="11" font-weight="600" fill="white">2. Build Context</text>
+    <text x="320" y="75" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">System + Task + Tools</text>
+    <text x="320" y="90" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">+ Blackboard state</text>
+    
+    <path d="M 400 65 L 440 65" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 3 -->
+    <rect x="450" y="30" width="160" height="70" rx="8" fill="#ec4899" filter="url(#shadow)"/>
+    <text x="530" y="55" text-anchor="middle" font-size="11" font-weight="600" fill="white">3. Create KV Cache</text>
+    <text x="530" y="75" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">create_shared_context()</text>
+    <text x="530" y="90" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">warm_cache=True</text>
+    
+    <path d="M 610 65 L 650 65" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 4 -->
+    <rect x="660" y="30" width="160" height="70" rx="8" fill="#8b5cf6" filter="url(#shadow)"/>
+    <text x="740" y="55" text-anchor="middle" font-size="11" font-weight="600" fill="white">4. ReAct Loop</text>
+    <text x="740" y="75" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">Thought → Action</text>
+    <text x="740" y="90" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">→ Observation</text>
+    
+    <!-- Loop arrow -->
+    <path d="M 740 100 C 740 130 860 130 860 65 L 860 50 C 860 30 820 30 820 65" 
+          stroke="#8b5cf6" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+    <text x="870" y="90" font-size="10" fill="#7c3aed">repeat</text>
+    
+    <path d="M 740 100 L 740 140" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Bottom row -->
+    <!-- Step 5 -->
+    <rect x="660" y="150" width="160" height="70" rx="8" fill="#10b981" filter="url(#shadow)"/>
+    <text x="740" y="175" text-anchor="middle" font-size="11" font-weight="600" fill="white">5. Execute Tool</text>
+    <text x="740" y="195" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">SafetyGuard.pre_call()</text>
+    <text x="740" y="210" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">Docker ephemeral</text>
+    
+    <path d="M 660 185 L 620 185" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 6 -->
+    <rect x="450" y="150" width="160" height="70" rx="8" fill="#3b82f6" filter="url(#shadow)"/>
+    <text x="530" y="175" text-anchor="middle" font-size="11" font-weight="600" fill="white">6. Update State</text>
+    <text x="530" y="195" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">Blackboard.write()</text>
+    <text x="530" y="210" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">Health.record()</text>
+    
+    <path d="M 450 185 L 410 185" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 7 -->
+    <rect x="240" y="150" width="160" height="70" rx="8" fill="#f59e0b" filter="url(#shadow)"/>
+    <text x="320" y="175" text-anchor="middle" font-size="11" font-weight="600" fill="white">7. Goal Progress</text>
+    <text x="320" y="195" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">update_progress()</text>
+    <text x="320" y="210" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">Bubble up to root</text>
+    
+    <path d="M 240 185 L 200 185" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 8 -->
+    <rect x="30" y="150" width="160" height="70" rx="8" fill="#8b5cf6" filter="url(#shadow)"/>
+    <text x="110" y="175" text-anchor="middle" font-size="11" font-weight="600" fill="white">8. Final Answer</text>
+    <text x="110" y="195" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">complete_goal()</text>
+    <text x="110" y="210" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.8)">Return result</text>
+    
+    <!-- Tracing annotation -->
+    <rect x="950" y="30" width="220" height="190" rx="8" fill="white" stroke="#94a3b8" stroke-dasharray="5,3"/>
+    <text x="1060" y="55" text-anchor="middle" font-size="11" font-weight="600" fill="#64748b">Tracer</text>
+    <text x="1060" y="75" text-anchor="middle" font-size="9" fill="#94a3b8">core/tracing.py</text>
+    <text x="1060" y="100" text-anchor="middle" font-size="9" fill="#64748b">Records every step:</text>
+    <text x="970" y="120" font-size="9" fill="#94a3b8">• THOUGHT</text>
+    <text x="970" y="135" font-size="9" fill="#94a3b8">• TOOL_CALL</text>
+    <text x="970" y="150" font-size="9" fill="#94a3b8">• TOOL_RESULT</text>
+    <text x="970" y="165" font-size="9" fill="#94a3b8">• LLM_RESPONSE</text>
+    <text x="970" y="180" font-size="9" fill="#94a3b8">• ERROR</text>
+    <text x="970" y="195" font-size="9" fill="#94a3b8">• RECOVERY</text>
+    <text x="1060" y="215" text-anchor="middle" font-size="9" fill="#64748b">→ Timeline + Metrics</text>
+  </g>
+  
+  <!-- ==================== MILVUS COLLECTIONS ==================== -->
+  <text x="700" y="1480" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e293b">Milvus Collections (memory/schemas.py)</text>
+  
+  <g transform="translate(50, 1500)">
+    <!-- tools -->
+    <rect x="0" y="0" width="200" height="100" rx="8" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="100" y="25" text-anchor="middle" font-size="12" font-weight="600" fill="#1e40af">tools</text>
+    <text x="20" y="45" font-size="9" fill="#64748b">id, name, version</text>
+    <text x="20" y="58" font-size="9" fill="#64748b">source_code, input_schema</text>
+    <text x="20" y="71" font-size="9" fill="#64748b">health_score, health_status</text>
+    <text x="20" y="84" font-size="9" fill="#64748b">embedding[1024]</text>
+    
+    <!-- agents -->
+    <rect x="220" y="0" width="200" height="100" rx="8" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="320" y="25" text-anchor="middle" font-size="12" font-weight="600" fill="#1e40af">agents</text>
+    <text x="240" y="45" font-size="9" fill="#64748b">id, name, agent_type</text>
+    <text x="240" y="58" font-size="9" fill="#64748b">system_prompt, tool_ids</text>
+    <text x="240" y="71" font-size="9" fill="#64748b">health_score, total_tasks</text>
+    <text x="240" y="84" font-size="9" fill="#64748b">embedding[1024]</text>
+    
+    <!-- mcp_servers -->
+    <rect x="440" y="0" width="200" height="100" rx="8" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="540" y="25" text-anchor="middle" font-size="12" font-weight="600" fill="#1e40af">mcp_servers</text>
+    <text x="460" y="45" font-size="9" fill="#64748b">id, name, container_id</text>
+    <text x="460" y="58" font-size="9" fill="#64748b">source_code, tools_json</text>
+    <text x="460" y="71" font-size="9" fill="#64748b">health_score, uptime</text>
+    <text x="460" y="84" font-size="9" fill="#64748b">runtime_status</text>
+    
+    <!-- task_state -->
+    <rect x="660" y="0" width="200" height="100" rx="8" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="760" y="25" text-anchor="middle" font-size="12" font-weight="600" fill="#92400e">task_state</text>
+    <text x="680" y="45" font-size="9" fill="#64748b">id, task_id, goal_id</text>
+    <text x="680" y="58" font-size="9" fill="#64748b">inputs, outputs, intermediate</text>
+    <text x="680" y="71" font-size="9" fill="#64748b">owner_agent, contributors</text>
+    <text x="680" y="84" font-size="9" fill="#78716c">(Blackboard data)</text>
+    
+    <!-- goals -->
+    <rect x="880" y="0" width="200" height="100" rx="8" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="980" y="25" text-anchor="middle" font-size="12" font-weight="600" fill="#92400e">goals</text>
+    <text x="900" y="45" font-size="9" fill="#64748b">id, description</text>
+    <text x="900" y="58" font-size="9" fill="#64748b">success_criteria_json</text>
+    <text x="900" y="71" font-size="9" fill="#64748b">parent_id, children_ids</text>
+    <text x="900" y="84" font-size="9" fill="#64748b">status, progress</text>
+    
+    <!-- diagnostics -->
+    <rect x="1100" y="0" width="200" height="100" rx="8" fill="#fee2e2" stroke="#ef4444"/>
+    <text x="1200" y="25" text-anchor="middle" font-size="12" font-weight="600" fill="#991b1b">diagnostics</text>
+    <text x="1120" y="45" font-size="9" fill="#64748b">id, failure_type</text>
+    <text x="1120" y="58" font-size="9" fill="#64748b">message, stack_trace</text>
+    <text x="1120" y="71" font-size="9" fill="#64748b">recoverable, attempts</text>
+    <text x="1120" y="84" font-size="9" fill="#64748b">agent_id, timestamp</text>
+  </g>
+  
+  <!-- ==================== LEGEND ==================== -->
+  <g transform="translate(50, 1640)">
+    <rect width="1300" height="130" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="650" y="25" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">Module Dependencies &amp; Test Results</text>
+    
+    <!-- Test results -->
+    <text x="30" y="55" font-size="11" font-weight="500" fill="#1e293b">Test Coverage: 42/42 ✓</text>
+    <text x="30" y="75" font-size="9" fill="#64748b">VLLMLatentProvider 5/5 │ MilvusClient 4/4 │ HealthManager 3/3 │ Blackboard 4/4</text>
+    <text x="30" y="90" font-size="9" fill="#64748b">DockerManager 4/4 │ GoalTree 5/5 │ RecoveryEngine 5/5 │ Parser 4/4 │ Tools 7/7</text>
+    
+    <!-- Fallback info -->
+    <text x="650" y="55" font-size="11" font-weight="500" fill="#1e293b">Graceful Degradation</text>
+    <text x="650" y="75" font-size="9" fill="#64748b">No vLLM → MockLLM │ No Milvus → In-memory Dict │ No Docker → subprocess</text>
+    
+    <!-- Dependencies -->
+    <text x="1000" y="55" font-size="11" font-weight="500" fill="#1e293b">Dependencies</text>
+    <text x="1000" y="75" font-size="9" fill="#22c55e">Core: pydantic ≥2.5.0</text>
+    <text x="1000" y="90" font-size="9" fill="#64748b">Optional: vllm, pymilvus, docker</text>
+    
+    <!-- Version -->
+    <text x="1250" y="115" text-anchor="end" font-size="10" fill="#94a3b8">v0.2.0</text>
+  </g>
+</svg>
